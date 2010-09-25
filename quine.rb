@@ -1,4 +1,4 @@
-game = [
+"Quine of Life by Andrew Vos (andrewvos.com)";game=[
   "                                               ",
   "                                               ",
   "                   XXX   XXX                   ",
@@ -16,12 +16,8 @@ game = [
   "                   XXX   XXX                   ",
   "                                               ",
   "                                               ",
-];code=%!
-  game_width=47
-  game_height=17
-  life="X"
-  death=" "
-  new_game=[]
+];code=%!game_width=47;game_height=17;life="X";death=" "
+new_game=[]
 
   for y in 0...game_height
     current_line = ""
@@ -53,8 +49,8 @@ game = [
     end
     new_game << current_line
   end
-
-  puts "game = ["
+print %{"Quine of Life by Andrew Vos (andrewvos.com)";}
+  puts "game=["
   new_game.each_index do |row_index|
     puts '  "' + new_game[row_index] + '",'
   end
