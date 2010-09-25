@@ -16,13 +16,12 @@ game = [
   "                   XXX   XXX                   ",
   "                                               ",
   "                                               ",
-]
-code = <<-CODE
+];code=%!
   game_width=47
   game_height=17
-  life = "X"
-  death = " "
-  new_game = []
+  life="X"
+  death=" "
+  new_game=[]
 
   for y in 0...game_height
     current_line = ""
@@ -59,10 +58,7 @@ code = <<-CODE
   new_game.each_index do |row_index|
     puts '  "' + new_game[row_index] + '",'
   end
-  puts "]"
-
-  puts 'code =  <<-CODE'
-  puts code;puts 'CODE';puts 'eval code'
-CODE
+  puts "];" + 'code=%' + 33.chr + code
+  puts 33.chr;print 'eval code'
+!
 eval code
-
