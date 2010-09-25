@@ -16,12 +16,9 @@
   "                   XXX   XXX                   ",
   "                                               ",
   "                                               ",
-];code=%!game_width=47;game_height=17;life="X";death=" "
-new_game=[]
-
-  for y in 0...game_height
-    current_line = ""
-    for x in 0...game_width
+];code=%!gw=47;gh=17;L="X";d=" ";new_game=[];0.upto(
+gh-1){|y|current_line = "";
+    0.upto(gw-1) { |x|
       life_count = 0
 
       vector_offsets = [
@@ -30,26 +27,26 @@ new_game=[]
         [-1, 1], [0, 1], [1, 1]
       ]
       vector_offsets.each do |offset_x, offset_y|
-        if (0...game_height).include?(y + offset_y)
-          if (0...game_width).include?(x + offset_x)
-            life_count += 1 if game[y+offset_y][x+offset_x, 1] == life
+        if (0...gh).include?(y + offset_y)
+          if (0...gw).include?(x + offset_x)
+            life_count += 1 if game[y+offset_y][x+offset_x, 1] == L
           end
         end
       end
 
-      state = death
-      if game[y][x,1] == life
-        state = death if life_count < 2
-        state = death if life_count > 3
-        state = life if life_count == 2 || life_count == 3
+      state = d
+      if game[y][x,1] == L
+        state = d if life_count < 2
+        state = d if life_count > 3
+        state = L if life_count == 2 || life_count == 3
       else
-        state = life if life_count == 3
+        state = L if life_count == 3
       end
       current_line += state
-    end
+    }
     new_game << current_line
-  end
-print %{"Quine of Life by Andrew Vos (andrewvos.com)";}
+  }
+  print %{"Quine of Life by Andrew Vos (andrewvos.com)";}
   puts "game=["
   new_game.each_index do |row_index|
     puts '  "' + new_game[row_index] + '",'
