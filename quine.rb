@@ -16,40 +16,26 @@
   "                   XXX   XXX                   ",
   "                                               ",
   "                                               ",
-];code=%!gw=47;gh=17;L="X";d=" ";new_game=[];0.upto(
-gh-1){|y|current_line = "";
-    0.upto(gw-1) { |x|
-      life_count = 0
+];code=%!gw=47;gh=17;L="X";d=" ";ng=[];0.upto(gh-1){
+|y|cl="";0.upto(gw-1){|x|lc=0;//;vo=[[-1,-1],[0,-1],
+[1,-1],[-1,0],[1,0],[-1,1],[0,1],[1,1]];vo.each{|ox,
+oy|;if(0..gh-1).include?(y+oy);if(0..gw-1).include?(
+x+ox);if(game[y+oy][x+ox,1]==L);lc+=1;end;end;end;};
+st=d;if(game[y][x,1]==L);st=case(lc);when(0..2),(4..
+8)then(d);when(2..3)then(L);end;else;
 
-      vector_offsets = [
-        [-1,-1], [0,-1], [1,-1],
-        [-1,0], [1, 0],
-        [-1, 1], [0, 1], [1, 1]
-      ]
-      vector_offsets.each do |offset_x, offset_y|
-        if (0...gh).include?(y + offset_y)
-          if (0...gw).include?(x + offset_x)
-            life_count += 1 if game[y+offset_y][x+offset_x, 1] == L
-          end
-        end
-      end
+if(lc==3);st=L;end;
 
-      state = d
-      if game[y][x,1] == L
-        state = d if life_count < 2
-        state = d if life_count > 3
-        state = L if life_count == 2 || life_count == 3
-      else
-        state = L if life_count == 3
+              #st = L if lc == 3
       end
-      current_line += state
+      cl += st
     }
-    new_game << current_line
+    ng << cl
   }
   print %{"Quine of Life by Andrew Vos (andrewvos.com)";}
   puts "game=["
-  new_game.each_index do |row_index|
-    puts '  "' + new_game[row_index] + '",'
+  ng.each_index do |row_index|
+    puts '  "' + ng[row_index] + '",'
   end
   puts "];" + 'code=%' + 33.chr + code
   puts 33.chr;print 'eval code'
