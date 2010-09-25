@@ -1,31 +1,32 @@
 game = [
-  "                 ",
-  "                 ",
-  "    XXX   XXX    ",
-  "                 ",
-  "  X    X X    X  ",
-  "  X    X X    X  ",
-  "  X    X X    X  ",
-  "    XXX   XXX    ",  
-  "                 ",
-  "    XXX   XXX    ",  
-  "  X    X X    X  ",
-  "  X    X X    X  ",
-  "  X    X X    X  ",
-  "                 ",
-  "    XXX   XXX    ",
-  "                 ",
-  "                 ",
+  "                                               ",
+  "                                               ",
+  "                   XXX   XXX                   ",
+  "                                               ",
+  "                 X    X X    X                 ",
+  "                 X    X X    X                 ",
+  "                 X    X X    X                 ",
+  "                   XXX   XXX                   ",
+  "                                               ",
+  "                   XXX   XXX                   ",
+  "                 X    X X    X                 ",
+  "                 X    X X    X                 ",
+  "                 X    X X    X                 ",
+  "                                               ",
+  "                   XXX   XXX                   ",
+  "                                               ",
+  "                                               ",
 ]
 code = <<-CODE
-  game_size = 17
+  game_width=47
+  game_height=17
   life = "X"
   death = " "
   new_game = []
 
-  for x in 0...game_size
+  for y in 0...game_height
     current_line = ""
-    for y in 0...game_size
+    for x in 0...game_width
       life_count = 0
 
       vector_offsets = [
@@ -34,9 +35,8 @@ code = <<-CODE
         [-1, 1], [0, 1], [1, 1]
       ]
       vector_offsets.each do |offset_x, offset_y|
-        range = 0...game_size
-        if range.include?(y + offset_y)
-          if range.include?(x + offset_x)
+        if (0...game_height).include?(y + offset_y)
+          if (0...game_width).include?(x + offset_x)
             life_count += 1 if game[y+offset_y][x+offset_x, 1] == life
           end
         end
@@ -62,9 +62,7 @@ code = <<-CODE
   puts "]"
 
   puts 'code =  <<-CODE'
-  puts code
-  puts 'CODE'
-  puts 'eval code'
+  puts code;puts 'CODE';puts 'eval code'
 CODE
 eval code
 
