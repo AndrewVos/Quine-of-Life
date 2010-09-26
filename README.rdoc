@@ -1,0 +1,8 @@
+= Quine of Life
+
+Conway's Game of Life in Quine format.
+
+Every time you execute the script, the game of life will be iterated.
+
+== Video
+A video can be found {here}[http://vimeo.com/15295218]
