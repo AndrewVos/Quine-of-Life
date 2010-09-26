@@ -1,6 +1,6 @@
 = Quine of Life
 
-Conway's Game of Life in Quine format.
+{Conway's Game of Life}[http://en.wikipedia.org/wiki/Conway's_Game_of_Life] in {Quine}[http://en.wikipedia.org/wiki/Quine_(computing)] format.
 
 Every time you execute the script, the game of life will be iterated.
 
