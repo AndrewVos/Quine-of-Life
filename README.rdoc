@@ -8,6 +8,7 @@ Every time you execute the script, the game of life will be iterated.
 A video can be found {here}[http://vimeo.com/15295218]
 
 == Code
+=== First Run
 	"Quine of Life by Andrew Vos (andrewvos.com)";game=[
 	"                                                 ",
 	"                                                 ",
@@ -42,6 +43,7 @@ A video can be found {here}[http://vimeo.com/15295218]
 	print(""+"];"+'code=%'+x+code+x);puts(";eval(code)"+
 	";"+34.chr+"Finished"+34.chr)!;eval(code);"Finished"
 
+=== Second Run
 	"Quine of Life by Andrew Vos (andrewvos.com)";game=[
 	"                                                 ",
 	"                                                 ",
@@ -76,6 +78,7 @@ A video can be found {here}[http://vimeo.com/15295218]
 	print(""+"];"+'code=%'+x+code+x);puts(";eval(code)"+
 	";"+34.chr+"Finished"+34.chr)!;eval(code);"Finished"
 
+=== Third Run
 	"Quine of Life by Andrew Vos (andrewvos.com)";game=[
 	"                                                 ",
 	"                                                 ",
@@ -110,6 +113,7 @@ A video can be found {here}[http://vimeo.com/15295218]
 	print(""+"];"+'code=%'+x+code+x);puts(";eval(code)"+
 	";"+34.chr+"Finished"+34.chr)!;eval(code);"Finished"
 
+=== Fourth Run
 	"Quine of Life by Andrew Vos (andrewvos.com)";game=[
 	"                                                 ",
 	"                                                 ",
