@@ -1,14 +1,21 @@
-= Quine of Life
+Quine of Life
+=============
 
-{Conway's Game of Life}[http://en.wikipedia.org/wiki/Conway's_Game_of_Life] in {Quine}[http://en.wikipedia.org/wiki/Quine_(computing)] format.
+[Conway's Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life) in [Quine](http://en.wikipedia.org/wiki/Quine_(computing)) format.
 
 Every time you execute the script, the game of life will be iterated.
 
-== Video
-A video can be found {here}[http://vimeo.com/15295218]
+Video
+-----
 
-== Code
-=== First Run
+A video can be found [here](http://vimeo.com/15295218)
+
+Code
+----
+
+### First Run
+
+```ruby
 	"Quine of Life by Andrew Vos (andrewvos.com)";game=[
 	"                                                 ",
 	"                                                 ",
@@ -42,8 +49,11 @@ A video can be found {here}[http://vimeo.com/15295218]
 	";ng.each_index{|ri|puts('"'+ng[ri]+'",')};x=33.chr;
 	print(""+"];"+'code=%'+x+code+x);puts(";eval(code)"+
 	";"+34.chr+"Finished"+34.chr)!;eval(code);"Finished"
+```
 
-=== Second Run
+### Second Run
+
+```ruby
 	"Quine of Life by Andrew Vos (andrewvos.com)";game=[
 	"                                                 ",
 	"                                                 ",
@@ -77,8 +87,11 @@ A video can be found {here}[http://vimeo.com/15295218]
 	";ng.each_index{|ri|puts('"'+ng[ri]+'",')};x=33.chr;
 	print(""+"];"+'code=%'+x+code+x);puts(";eval(code)"+
 	";"+34.chr+"Finished"+34.chr)!;eval(code);"Finished"
+```
 
-=== Third Run
+### Third Run
+
+```ruby
 	"Quine of Life by Andrew Vos (andrewvos.com)";game=[
 	"                                                 ",
 	"                                                 ",
@@ -112,8 +125,11 @@ A video can be found {here}[http://vimeo.com/15295218]
 	";ng.each_index{|ri|puts('"'+ng[ri]+'",')};x=33.chr;
 	print(""+"];"+'code=%'+x+code+x);puts(";eval(code)"+
 	";"+34.chr+"Finished"+34.chr)!;eval(code);"Finished"
+```
 
-=== Fourth Run
+### Fourth Run
+
+```ruby
 	"Quine of Life by Andrew Vos (andrewvos.com)";game=[
 	"                                                 ",
 	"                                                 ",
@@ -147,3 +163,4 @@ A video can be found {here}[http://vimeo.com/15295218]
 	";ng.each_index{|ri|puts('"'+ng[ri]+'",')};x=33.chr;
 	print(""+"];"+'code=%'+x+code+x);puts(";eval(code)"+
 	";"+34.chr+"Finished"+34.chr)!;eval(code);"Finished"
+```
